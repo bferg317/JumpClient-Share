@@ -112,7 +112,7 @@ Try {
 	##* END VARIABLE DECLARATION
 	##*===============================================
 
-	# Declare functions
+	# Declare functions by dot-sourcing individual scripts.
     . ".\\Files\Test-Bomgar.ps1"
     . ".\\Files\Remove-Bomgar.ps1"
     . ".\\Files\Get-ADComputerOU\Get-ADComputerOU.ps1"
@@ -141,12 +141,13 @@ Try {
 			Remove-Bomgar
 		}
 		Write-Host "Tests for baseline & removal complete. Proceeding with installation." -ForegroundColor Cyan
+		# Run OU function, then match the OU path to intended Bomgar jump group CODE. Not group NAME. Group CODE.
 		Get-ADComputerOU
 		foreach    ( $ADSite in $ADPath) {
 		    if     ( $ADPath -like     '*Special OUs*')             { $SiteCode = 'Target bomgar group code'  }
 		    elseif ( $ADPath -like     '*Special OUs*')             { $SiteCode = 'Target bomgar group code'  }
 		    elseif ( $ADPath -like     '*Special OUs*')             { $SiteCode = 'Target bomgar group code'  }
-		    elseif ( $ADPath -like     '*Special OUs*')  			{ $SiteCode = 'Target bomgar group code'  }
+		    elseif ( $ADPath -like     '*Special OUs*') 	    { $SiteCode = 'Target bomgar group code'  }
 		    elseif ( $Return -contains '2-letter site code')        { $SiteCode = 'Target bomgar group code'  }
 		    elseif ( $Return -contains '2-letter site code')        { $SiteCode = 'Target bomgar group code'  }
 		    elseif ( $Return -contains '2-letter site code')        { $SiteCode = 'Target bomgar group code'  }
