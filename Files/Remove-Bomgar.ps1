@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS       Used to uninstall bomgar
 .AUTHOR         Barry Ferguson
-.LINK           mailto:barry.ferguson@countrymark.com
+.LINK           mailto:b.ferguson317@gmail.com
 .VERSION        2.0
 .DATE           02/18/2019
 .NOTES          The problem here is that the Bomgar client doesn't remove its registry entry in all circumstances of uninstallation.
